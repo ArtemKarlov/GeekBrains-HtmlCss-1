@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>My E-Shop</title>
+    <style>
+        .feedback {
+            line-height: 32px;
+        }
+        
+        .menu,
+        .contacts {
+            list-style-type: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +26,49 @@
     </ul>
     <hr>
     <!-- main -->
-    
+    <h3>Напишите нам</h3>
+    <form action="#" class="feedback">
+        <fieldset>
+            <label>Представьтесь
+                <input type="text" placeholder=" Имя"> </label>
+            <br>
+            <label>Электронная почта
+                <input id="e-mail" type="text" placeholder=" name@example.com"> </label>
+            <br>
+            <label>Тема обращения
+                <select name="topic" id="topic">
+                    <option value="default" selected>---</option>
+                    <option value="offer">Отзыв</option>
+                    <option value="claim">Жалоба</option>
+                    <option value="other">Прочее</option>
+                </select>
+            </label>
+            <br>
+            <label>Сообщение
+                <br>
+                <textarea name="notes" id="notes" cols="80" rows="7"></textarea>
+            </label>
+            <br>
+            <label> </label>
+            <label>
+                <input type="checkbox" checked>я принимаю условия <a href="#">политики конфиденциальности</a> </label>
+            <br>
+            <input type="submit"> </fieldset>
+    </form>
+    <h3>Адрес</h3>
+    <ul class="contacts">
+        <li>Тел.: +7 846 965-95-35</li>
+        <li>Адрес: г. Самара, ул. Самарская, д.188В</li>
+        <li>Email: sales@photoline.ru</li>
+        <li>График работы:
+            <ul class="schedule">
+                <li>Пн.-Пт.: 9:00 - 18:00</li>
+                <li>Сб.: 9:00 - 17:00</li>
+                <li>Вс.: Выходной</li>
+            </ul>
+        </li>
+    </ul>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae4f5066dbb2898711ab981f7390eaaa1a0acd8af475ac38bc34cbf89a4982646&amp;width=719&amp;height=527&amp;lang=ru_RU&amp;scroll=true"></script>
     <!-- footer -->
     <hr>
     <p>&copy;&nbsp; Все права защищены</p>
