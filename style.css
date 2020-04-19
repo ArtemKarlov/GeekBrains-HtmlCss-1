@@ -1,0 +1,41 @@
+body {
+    background-color: #f8f8f8;
+}
+
+.menu,
+.contacts {
+    list-style-type: none;
+}
+
+.menu {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 18px;
+    padding: 0;
+}
+
+.menu li {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background-color: #8f8f8f;
+    display: inline-block;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding-top: 5px;
+}
+
+.menu a:hover {
+    background-color: #5f5f5f;
+}
+
+.feedback {
+    line-height: 32px;
+}
+
+.feedback input {
+    color: black;
+}
