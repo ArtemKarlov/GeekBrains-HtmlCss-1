@@ -3,6 +3,35 @@ body {
     font-family: "Times new Roman", serif;
 }
 
+.page-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container {
+    padding: 10px;
+}
+
+.header,
+.main {
+    border-bottom: 1px solid #000;
+}
+
+
+/* добавляем логотип */
+
+.logo {
+    width: 230px;
+    height: 80px;
+    background-image: url(img/logo.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+
+/* меню сайта */
+
 .menu,
 .specification,
 .contacts {
@@ -23,16 +52,23 @@ body {
     display: inline-block;
 }
 
-.menu a {
+.menu li a {
     text-decoration: none;
     color: #fff;
     display: block;
     padding-top: 5px;
 }
 
-.menu a:hover {
+.menu li a:hover {
     background-color: #5f5f5f;
 }
+
+.menu li a:active {
+    background-color: #000;
+}
+
+
+/* страница продукта */
 
 .product h3 {
     color: #000;
@@ -57,8 +93,14 @@ body {
 }
 
 .product img {
-    background-color: #5f5f5f;
-    padding: 5px;
+    outline: 3px solid #5f5f5f;
+}
+
+
+/* 4.7.При наведении на изображения в разделе просмотра товара, подробного описания, необходимо сделать так, чтобы рамка исчезала, но сама картинка при этом не должна смещаться, т.е., должна оставаться неподвижной */
+
+.product img:hover {
+    outline: none;
 }
 
 .summary {
@@ -76,6 +118,53 @@ body {
     text-align: left;
 }
 
+
+/* 4.8.На странице просмотра товара каталога в каждом параграфе сделать первую букву первого слова другим шрифтом и размером. */
+
+.product p::first-letter {
+    font-family: cursive;
+    font-size: 36px;
+}
+
+
+/*4.6. На странице товара каталога:
+
+    Под заголовком «Технические характеристики» разместить таблицу, размером не меньше 2X3 (есть отдельное задание);
+    Записать в таблицу произвольные технические характеристики вашего товара;
+    Если технических характеристик нет, добавьте таблицу с любыми параметрами по вашему выбору.
+ */
+
+.table-specification {
+    /*    width: 1000px;*/
+    /*    height: 300px;*/
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.table-specification td,
+.table-specification th {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 5px;
+}
+
+.table-specification caption {
+    font-family:monospace;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.table-specification tr {
+    height: 20px;
+}
+
+.table-specification tr:first-child {
+    height: 100px;
+}
+
+
+/* список характеристик товара */
+
 .specification li,
 .contacts > li {
     color: #5555aa;
@@ -92,14 +181,18 @@ body {
     background-size: 15px;
 }
 
+
+/* обратная связь */
+
 .feedback {
     line-height: 40px;
 }
 
 .feedback input[type="text"],
+.feedback input[type="email"],
 .feedback select {
     width: 200px;
-    height: 24px;
+    height: 20px;
     margin-left: 10px;
 }
 
@@ -118,23 +211,49 @@ body {
     font-size: 14px;
 }
 
+
+/* 4.4.При вводе текста в поле Email на странице контактной информации поменять цвет текста и цвет поля. */
+
+.feedback input[type="email"]:invalid {
+    color: #781818;
+    background-color: #ffdede;
+    /*    border-color: red;*/
+}
+
+.feedback input:focus,
+.feedback textarea:focus {
+    color: #787018;
+    background-color: #fdffde;
+}
+
+
+/* 4.5. При вводе текста в текстовые поля каждое слово должно начинаться с большой буквы, даже если пользователь будет вводить с маленькой. */
+
+.feedback input[type="text"]:focus,
+.feedback textarea:focus {
+    text-transform: capitalize;
+}
+
+
+/* список контактов */
+
 .contacts > li {
     background-size: 20px;
 }
 
-.contacts > li:first-child {
+.list-phone {
     background-image: url(icons/icons8-phone-32.png);
 }
 
-.contacts > li:nth-child(2) {
+.list-address {
     background-image: url(icons/icons8-home-32.png);
 }
 
-.contacts > li:nth-child(3) {
+.list-email {
     background-image: url(icons/icons8-secured-letter-32.png);
 }
 
-.contacts > li:last-child {
+li.list-time {
     background-image: url(icons/icons8-calendar-32.png);
     background-position: left top;
 }
