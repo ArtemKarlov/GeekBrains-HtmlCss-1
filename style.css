@@ -3,19 +3,40 @@ body {
     font-family: "Times new Roman", serif;
 }
 
+
+/* 5.1.1. Создать родительский блок с классом container, задать значение ширины и расположить блок по центру экрана. */
+
 .page-container {
-    max-width: 1024px;
+    min-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0;
+    background-color: aliceblue;
 }
 
 .container {
-    padding: 10px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-.header,
+.header {
+    height: 120px;
+    padding-top: 20px;
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+}
+
 .main {
-    border-bottom: 1px solid #000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    height: 100px;
+    background-color: burlywood;
+    display: flex;
+    justify-content: flex-end;
 }
 
 
@@ -38,10 +59,12 @@ body {
     list-style-type: none;
 }
 
-.menu {
+.menu,
+.sub-menu {
     font-family: "Fira Sans", sans-serif;
     font-size: 18px;
     padding: 0;
+    margin: 0;
 }
 
 .menu li {
@@ -50,6 +73,7 @@ body {
     text-align: center;
     background-color: #8f8f8f;
     display: inline-block;
+    /*горизонтальное меню*/
 }
 
 .menu li a {
@@ -67,14 +91,42 @@ body {
     background-color: #000;
 }
 
+.sub-menu {
+    display: none;
+}
+
+.footer p {
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
 
 /* страница продукта */
+.buy {
+    width: 90px;
+    height: 30px;
+    font-family:sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: azure;
+    background-color:cadetblue;
+    border-radius: 5px;
+}
+
+.buy:hover {
+    background-color:chocolate;
+}
+
+.buy:active {
+    background-color: darkgoldenrod;
+}
 
 .product h3 {
     color: #000;
     font-size: 18px;
     font-weight: 400;
     background-color: #eaeaea;
+    overflow: hidden;
 }
 
 .product h4 {
@@ -84,16 +136,25 @@ body {
     background-color: #eaeafa;
 }
 
-.product a + h3 +h4 {
-    background-color: #f8f8f8;
+.price {
     font-family: sans-serif;
     font-size: 20px;
     font-weight: 700;
-    padding-left: 40px;
 }
 
 .product img {
     outline: 3px solid #5f5f5f;
+    float: left;
+    margin-right: 20px;
+}
+
+
+/* прекращаем обтекание после параграфа с кратким описанием*/
+
+.summary::after {
+    content: " ";
+    display: block;
+    clear: both;
 }
 
 
@@ -149,7 +210,7 @@ body {
 }
 
 .table-specification caption {
-    font-family:monospace;
+    font-family: monospace;
     font-size: 24px;
     padding-bottom: 10px;
 }
