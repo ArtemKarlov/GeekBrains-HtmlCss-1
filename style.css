@@ -3,44 +3,35 @@ body {
     font-family: "Times new Roman", serif;
 }
 
-
-/* 5.1.1. Создать родительский блок с классом container, задать значение ширины и расположить блок по центру экрана. */
-
 .page-container {
     min-width: 600px;
     max-width: 800px;
     margin: 0 auto;
     padding: 0;
     background-color: aliceblue;
+
 }
 
 .container {
     padding: 0 20px;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .header {
     height: 120px;
     padding-top: 20px;
-    background-color: beige;
+    background-color: #def4f6;
+    background-image: url(img/head.png);
+    background-size: contain;
+    background-repeat: repeat-x;
     display: flex;
     justify-content: space-between;
 }
 
-.main {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.footer {
-    height: 100px;
-    background-color: burlywood;
-    display: flex;
-    justify-content: flex-end;
-}
-
 
 /* добавляем логотип */
+/*https://app.logoza.ru/?title=%D1%84%D0%BE%D1%82%D0%BE&slogan=%D1%84%D0%BE%D1%82%D0%BE*/
 
 .logo {
     width: 230px;
@@ -50,7 +41,7 @@ body {
     background-position: left top;
 }
 
-
+/*=====================================================*/
 /* меню сайта */
 
 .menu,
@@ -95,26 +86,74 @@ body {
     display: none;
 }
 
+/*=====================================================*/
+/* MAIN страницы */
+
+.main {
+    min-height: calc(100vh - 225px);
+}
+
+/*=====================================================*/
+/* подвал сайта */
+
+.footer {
+    margin: 0;
+    height: 50px;
+    background-color: rgb(37, 55, 81);
+    color: rgb(200, 200, 200);
+    display: flex;
+    justify-content: flex-end;
+}
+
 .footer p {
-    margin: 20px 0 0 0;
+    margin: auto 0;
     padding: 0;
 }
 
+/*=====================================================*/
+/* страница католога */
 
+.product-item img {
+    width: 200px;
+}
+.product-item h3 {
+    height: 40px; /* задаем высоту загаловка, чтобы помещались две строки текста*/   
+}
+
+.product-item {
+    box-sizing: border-box;
+    padding: 0;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 240px;
+    height: 240px;
+/*    float: left;*/
+    display: inline-block;
+    text-align: center;
+}
+
+/*
+.clearfix {
+    clear: both;
+}
+*/
+
+/*=====================================================*/
 /* страница продукта */
+
 .buy {
     width: 90px;
     height: 30px;
-    font-family:sans-serif;
+    font-family: sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: azure;
-    background-color:cadetblue;
+    background-color: rgb(37, 81, 81);
     border-radius: 5px;
 }
 
 .buy:hover {
-    background-color:chocolate;
+    background-color: chocolate;
 }
 
 .buy:active {
@@ -148,17 +187,11 @@ body {
     margin-right: 20px;
 }
 
-
-/* прекращаем обтекание после параграфа с кратким описанием*/
-
-.summary::after {
+.summary::after {    /* прекращаем обтекание после параграфа с кратким описанием*/
     content: " ";
     display: block;
     clear: both;
 }
-
-
-/* 4.7.При наведении на изображения в разделе просмотра товара, подробного описания, необходимо сделать так, чтобы рамка исчезала, но сама картинка при этом не должна смещаться, т.е., должна оставаться неподвижной */
 
 .product img:hover {
     outline: none;
@@ -179,21 +212,10 @@ body {
     text-align: left;
 }
 
-
-/* 4.8.На странице просмотра товара каталога в каждом параграфе сделать первую букву первого слова другим шрифтом и размером. */
-
-.product p::first-letter {
+.product p::first-letter {    /* у первой буквы параграфа меняем оформление */
     font-family: cursive;
     font-size: 36px;
 }
-
-
-/*4.6. На странице товара каталога:
-
-    Под заголовком «Технические характеристики» разместить таблицу, размером не меньше 2X3 (есть отдельное задание);
-    Записать в таблицу произвольные технические характеристики вашего товара;
-    Если технических характеристик нет, добавьте таблицу с любыми параметрами по вашему выбору.
- */
 
 .table-specification {
     /*    width: 1000px;*/
@@ -242,44 +264,54 @@ body {
     background-size: 15px;
 }
 
-
+/*============================================================*/
 /* обратная связь */
 
 .feedback {
-    line-height: 40px;
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 350px;
+    border-radius: 10px;
+    padding: 5px;
+    float: left;
+}
+
+.feedback fieldset {
+    border-radius: 10px;
+    border: 2px solid #555599;
+}
+
+.feedback legend {
+    color: #555599;
 }
 
 .feedback input[type="text"],
 .feedback input[type="email"],
+.feedback input[type="tel"],
 .feedback select {
     width: 200px;
     height: 20px;
-    margin-left: 10px;
 }
 
 .feedback input,
 .feedback textarea,
 .feedback select {
-    color: #565689;
-    font-family: sans-serif;
-    font-size: 18px;
+    padding-left: 5px;
+    color: #555599;
+    margin: 5px;
 }
-
 .feedback input::placeholder {
-    color: #9f9f9f;
-    font-family: sans-serif;
+    color: #555577;
     font-style: italic;
     font-size: 14px;
 }
 
-
-/* 4.4.При вводе текста в поле Email на странице контактной информации поменять цвет текста и цвет поля. */
-
-.feedback input[type="email"]:invalid {
-    color: #781818;
-    background-color: #ffdede;
-    /*    border-color: red;*/
+.feedback input[type="text"],
+.feedback textarea {
+    text-transform: capitalize;
 }
+
+
 
 .feedback input:focus,
 .feedback textarea:focus {
@@ -287,16 +319,33 @@ body {
     background-color: #fdffde;
 }
 
+.feedback input[type="email"]:focus {
+    color: #a31616;
+    background-color: #f8c9c9;
+}
 
-/* 4.5. При вводе текста в текстовые поля каждое слово должно начинаться с большой буквы, даже если пользователь будет вводить с маленькой. */
-
-.feedback input[type="text"]:focus,
-.feedback textarea:focus {
-    text-transform: capitalize;
+.policy {
+    font-size: 12px;
 }
 
 
+
 /* список контактов */
+.float {
+    float: left;
+}
+
+.address {
+    margin-left: 30px;
+}
+.clearfix {
+    clear: both;
+}
+
+.contacts {
+    padding: 0;
+}
+
 
 .contacts > li {
     background-size: 20px;
