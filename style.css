@@ -127,16 +127,10 @@ body {
     margin-bottom: 20px;
     width: 240px;
     height: 240px;
-/*    float: left;*/
     display: inline-block;
     text-align: center;
 }
 
-/*
-.clearfix {
-    clear: both;
-}
-*/
 
 /*=====================================================*/
 /* страница продукта */
@@ -293,6 +287,10 @@ body {
     height: 20px;
 }
 
+.feedback input[type="tel"] {
+    width: 180px;
+}
+
 .feedback input,
 .feedback textarea,
 .feedback select {
@@ -310,8 +308,6 @@ body {
 .feedback textarea {
     text-transform: capitalize;
 }
-
-
 
 .feedback input:focus,
 .feedback textarea:focus {
@@ -335,15 +331,12 @@ body {
     float: left;
 }
 
-.address {
-    margin-left: 30px;
-}
 .clearfix {
     clear: both;
 }
 
 .contacts {
-    padding: 0;
+    padding: 0; /* нужно будет сбросить стандартные стили (найте подходящий reset.css)*/
 }
 
 
